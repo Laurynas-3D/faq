@@ -1,6 +1,6 @@
-<div class="lfaq-container" >
+<div class="lfaq-container">
     <div itemscope itemtype="http://schema.org/FAQPage">
-        <h4 class="lfaq-title" >{l s='FAQ' mod='lfaq'}</h4>
+        <h4 class="lfaq-title">{l s='FAQ' mod='lfaq'}</h4>
         {foreach from=$faqs item=faq key=k}
             <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
                  data-toggle="collapse" data-target="#collapse{$k}" aria-expanded="false" aria-controls="collapse{$k}">

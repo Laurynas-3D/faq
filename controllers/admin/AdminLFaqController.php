@@ -2,20 +2,16 @@
 
 class AdminLFaqController extends ModuleAdminController
 {
-
     public $bootstrap = true;
 
     public function __construct()
     {
-
         $this->className = 'LfaqQuestion';
         $this->table = 'lfaq';
         $this->identifier = 'id_lfaq';
 
         parent::__construct();
         $this->initList();
-
-
     }
 
     public function initContent()
@@ -80,7 +76,6 @@ class AdminLFaqController extends ModuleAdminController
 
     private function initList()
     {
-
         $this->fields_list = array(
             'id_lfaq' => array(
                 'title' => $this->l('ID'),
