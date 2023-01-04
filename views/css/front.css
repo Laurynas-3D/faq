@@ -1,0 +1,55 @@
+.lfaq-container {
+    margin: 30px 0 30px 0;
+    padding: 20px 40px 20px 40px;
+    background-color: rgb(235, 235, 235);
+}
+
+.lfaq-title {
+    font-weight: 200;
+    color: rgb(217, 35, 22);
+    font-size: 34px;
+    line-height: 1.5;
+    position: relative;
+    transition: .3s color;
+    display: flex;
+    justify-content: center;
+
+}
+
+div.lfaq-question {
+    padding: 10px 0px 10px 10px;
+    border-left: 4px darkred solid;
+    background-color: rgb(245, 245, 245);
+}
+
+.lfaq-question-block {
+    margin-top: 16px;
+}
+
+.lfaq-q-line {
+    display: flex;
+    align-items: center;
+}
+
+.lfaq-q-line i.arrow-down, .lfaq-q-line i.arrow-up {
+    margin-right: 18px;
+}
+
+.lfaq-q {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(23, 23, 23);
+    cursor: pointer;
+    width: 100%;
+    outline: 0;
+    margin: 20px 0;
+}
+
+.lfaq-a {
+    margin-left: 44px;
+    margin-right: 8px;
+    font-size: 16px;
+    font-weight: 200;
+    color: rgb(60, 60, 60);
+}
