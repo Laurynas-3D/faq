@@ -1,7 +1,18 @@
 .lfaq-container {
     margin: 30px 0 30px 0;
-    padding: 20px 40px 20px 40px;
-    background-color: rgb(235, 235, 235);
+    padding: 20px 0 20px 0px;
+}
+
+.lfaq-qa {
+    background-color: rgb(238, 238, 238);
+    padding: 0 20px 0 28px ;
+}
+
+.lfaq-qa:first-of-type {
+    padding-top: 22px;
+}
+.lfaq-qa:last-of-type {
+    padding-bottom: 22px;
 }
 
 .lfaq-title {

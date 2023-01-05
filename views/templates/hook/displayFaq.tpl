@@ -2,7 +2,7 @@
     <div itemscope itemtype="http://schema.org/FAQPage">
         <h4 class="lfaq-title">{l s='FAQ' mod='lfaq'}</h4>
         {foreach from=$faqs item=faq key=k}
-            <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
+            <div class="lfaq-qa" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
                  data-toggle="collapse" data-target="#collapse{$k}" aria-expanded="false" aria-controls="collapse{$k}">
                 <span class="lfaq-q-line">
                     <i class="material-icons arrow-down">&#xE313;</i>

@@ -48,6 +48,16 @@ class AdminLFaqController extends ModuleAdminController
                     ),
                 ),
                 array(
+                    'type' => 'select',
+                    'label' => $this->l('Shop'),
+                    'name' => 'id_shop',
+                    'options' => array(
+                        'query' => Shop::getShops(false),
+                        'id' => 'id_shop',
+                        'name' => 'name',
+                    ),
+                ),
+                array(
                     'type' => 'text',
                     'label' => $this->l('Question'),
                     'name' => 'question',
@@ -91,23 +101,30 @@ class AdminLFaqController extends ModuleAdminController
                 'class' => 'fixed-width-sm',
                 'orderby' => false,
             ),
+            'shop_name' => array(
+                'title' => $this->l('Shop'),
+                'class' => 'fixed-width-sm',
+                'orderby' => true,
+            ),
             'question' => array(
                 'title' => $this->l('Question'),
                 'align' => 'center',
                 'filter_key' => 'lfl.question',
-                'class' => 'fixed-width-m',
+                'class' => 'fixed-width-xxl',
                 'orderby' => false,
+                'search' => false,
             ),
             'answer' => array(
                 'title' => $this->l('Answer'),
                 'align' => 'center',
                 'filter_key' => 'lfl.answer',
-                'class' => 'fixed-width-m',
+                'class' => 'fixed-width-xxxl',
                 'orderby' => false,
+                'search' => false,
             ),
         );
 
-        $this->_select = 'lfl.question, lfl.answer, a.id_lfaq';
+        $this->_select = 'lfl.question, lfl.answer, a.id_lfaq, s.name as shop_name';
 
         $this->_join = '
             JOIN `' . _DB_PREFIX_ . 'lfaq_lang` AS lfl
@@ -116,6 +133,8 @@ class AdminLFaqController extends ModuleAdminController
                     lfl.`id_lang` = "' . (int)$this->context->language->id . '" AND
                     lfl.`id_shop` = "' . (int)$this->context->shop->id . '"
                 )
+            JOIN `' . _DB_PREFIX_ . 'shop` AS s
+                ON (lfl.`id_shop` = s.`id_shop`)
             ';
 
         $this->actions = array('edit', 'delete');
