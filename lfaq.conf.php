@@ -12,6 +12,10 @@ if (!defined('_LFAQ_CLASSES_DIR_')) {
     define('_LFAQ_CLASSES_DIR_', _LFAQ_DIR_.'classes/');
 }
 
+if (!defined('_LFAQ_TRAITS_DIR_')) {
+    define('_LFAQ_TRAITS_DIR_', _LFAQ_DIR_.'trait/');
+}
+
 if (!defined('_LFAQ_TPL_DIR_')) {
     define('_LFAQ_TPL_DIR_', _MODULE_DIR_.'views/templates/');
 }

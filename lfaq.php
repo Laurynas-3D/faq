@@ -1,11 +1,19 @@
 <?php
 
+use Demo as DemoTrait;
+
+require_once(dirname(__FILE__) . '/trait/Demo.php');
+
 if (!defined('_PS_VERSION_')) {
     exit;
 }
 
 class Lfaq extends Module
 {
+    use DemoTrait {
+        DemoTrait::demoData as private;
+    }
+
     protected $config_form = false;
 
     const CONTROLLER_FAQ = 'AdminLFaq';
@@ -50,7 +58,7 @@ class Lfaq extends Module
             return false;
         }
 
-        $this->demoData();
+        $this->loadDemo();
 
         return true;
     }
@@ -122,29 +130,8 @@ class Lfaq extends Module
         return $this->display(__FILE__, 'displayFaq.tpl');
     }
 
-    private function demoData()
+    public function loadDemo()
     {
-        $questions = array(
-            array(
-                'q' => 'Kokio dydžio yra visata?',
-                'a' => 'Manoma, kad stebimos visatos skersmuo yra apie 93 milijardai šviesmečių, joje yra daugiau nei 100 
-              milijardų galaktikų. Tačiau tikrasis Visatos dydis nežinomas ir gali būti begalinis.'
-            ),
-            array(
-                'q' => 'Ar tiesa, kad mes naudojame tik 10% savo smegenų?',
-                'a' => 'Nėra jokių mokslinių įrodymų, patvirtinančių mintį, kad mes naudojame tik 10% savo smegenų. 
-                Tiesą sakant, smegenų skenavimas parodė, kad visos smegenys yra aktyvios ir atlieka įvairias funkcijas, 
-                net kai mes ilsimės.'
-            ),
-        );
-
-        foreach ($questions as $qa) {
-            $qaObj = new LfaqQuestion();
-            $qaObj->question = $qa['q'];
-            $qaObj->answer = $qa['a'];
-            $qaObj->active = true;
-
-            $qaObj->save();
-        }
+        $this->demoData();
     }
 }
