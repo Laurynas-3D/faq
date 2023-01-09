@@ -119,12 +119,14 @@ class Lfaq extends Module
     {
 
         $faqs = LfaqQuestion::getFaq();
+        $showTitle = (bool) Configuration::get('LFAQ_TITLE_ACTIVE');
 
         if (empty($faqs)) {
             return;
         }
         $this->context->smarty->assign(array(
             'faqs' => $faqs,
+            'showTitle' => $showTitle,
         ));
 
         return $this->display(__FILE__, 'displayFaq.tpl');

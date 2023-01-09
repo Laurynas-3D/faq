@@ -11,6 +11,9 @@ class AdminLFaqController extends ModuleAdminController
         $this->identifier = 'id_lfaq';
 
         parent::__construct();
+        $this->toolbar_title = "FAQ";
+
+        $this->initOptions();
         $this->initList();
     }
 
@@ -147,4 +150,22 @@ class AdminLFaqController extends ModuleAdminController
             )
         );
     }
+
+    private function initOptions()
+    {
+        $this->fields_options = array(
+            'general' => array(
+                'title' => $this->l('Settings'),
+                'fields' => array(
+                    'LFAQ_TITLE_ACTIVE' => array(
+                        'title' => $this->l('Show FAQ Title'),
+                        'type' => 'bool',
+                        'tab' => 'setting',
+                    ),
+                ),
+                'submit' => array('title' => $this->l('Save')),
+            ),
+        );
+    }
+
 }
