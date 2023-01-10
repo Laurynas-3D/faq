@@ -160,7 +160,11 @@ class AdminLFaqController extends ModuleAdminController
                     'LFAQ_TITLE_ACTIVE' => array(
                         'title' => $this->l('Show FAQ Title'),
                         'type' => 'bool',
-                        'tab' => 'setting',
+                    ),
+                    'LFAQ_TITLE' => array(
+                        'title' => $this->l('Show FAQ Title'),
+                        'type' => 'textLang',
+                        'class' => 'input fixed-width-md',
                     ),
                 ),
                 'submit' => array('title' => $this->l('Save')),

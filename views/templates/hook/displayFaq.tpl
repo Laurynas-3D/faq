@@ -1,6 +1,6 @@
 <div class="lfaq-container">
     <div itemscope itemtype="http://schema.org/FAQPage">
-        {if $showTitle}<h4 class="lfaq-title">{l s='FAQ' mod='lfaq'}</h4>{/if}
+        {if $showTitle && $title}<h4 class="lfaq-title">{$title}</h4>{/if}
         {foreach from=$faqs item=faq key=k}
             <div class="lfaq-qa collapsed" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
                  data-toggle="collapse" data-target="#collapse{$k}" aria-expanded="false" aria-controls="collapse{$k}">

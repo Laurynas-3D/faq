@@ -119,14 +119,15 @@ class Lfaq extends Module
     {
 
         $faqs = LfaqQuestion::getFaq();
-        $showTitle = (bool) Configuration::get('LFAQ_TITLE_ACTIVE');
+        $idLang = $this->context->language->id;
 
         if (empty($faqs)) {
             return;
         }
         $this->context->smarty->assign(array(
             'faqs' => $faqs,
-            'showTitle' => $showTitle,
+            'showTitle' => (bool) Configuration::get('LFAQ_TITLE_ACTIVE'),
+            'title' => Configuration::get('LFAQ_TITLE', $idLang),
         ));
 
         return $this->display(__FILE__, 'displayFaq.tpl');
